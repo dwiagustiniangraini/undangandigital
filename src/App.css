@@ -1,0 +1,49 @@
+.custom-border {
+  border: 20px solid transparent; /* tebal border */
+  border-image-source: url("./assets/images/JAWA-BACKGROUND.webp");
+  border-image-slice: 60; /* atur pemotongan gambar */
+}
+
+@font-face {
+  font-family: "Ginger";
+  src: url("./assets/fonts/Ginger.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pinyon";
+  src: url("./assets/fonts/PinyonScript-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cormorant Infant";
+  src: url("./assets/fonts/static/CormorantInfant-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Playfair";
+  src: url("./assets/fonts/Playfair/Playfair_144pt-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.ginger {
+  font-family: "Ginger", sans-serif;
+}
+
+.pinyon {
+  font-family: "Pinyon", sans-serif;
+}
+.infant {
+  font-family: "Cormorant Infant", sans-serif;
+}
+.playfair {
+  font-family: "Playfair", sans-serif;
+}

@@ -1,0 +1,159 @@
+import batikAtas from "../assets/images/JAWA-MOTIF-ATAS.webp";
+import batikBawah from "../assets/images/JAWA-MOTIF-BAWAH.webp";
+import mempelaiWanita from "../assets/images/Jawa-21-1.webp";
+import wayangKiri from "../assets/images/JAWA-COUPLE-1.webp";
+import bunga from "../assets/images/JAWA-COUPLE-2.webp";
+import wayangKanan from "../assets/images/JAWA-COUPLE-3.webp";
+import bungaReverse from "../assets/images/JAWA-COUPLE-4.webp";
+import mempelaiPria from "../assets/images/Jawa-22-1.webp";
+import { FaInstagram } from "react-icons/fa6";
+import { motion } from "motion/react";
+
+export default function Profile() {
+  return (
+    <div className="relative min-h-screen p-[30px] ">
+      <div className="bg-white/80 rounded-full shadow-lg overflow-hidden border-4 border-[#D4AF37]">
+        <img src={batikAtas} alt="" className="-mb-50" />
+        <div className="relative z-10 max-w-md mx-auto px-4 pt-12 text-center pb-0">
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2 }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            <img
+              src="/src/assets/images/JAWA-GUNUNGAN.webp"
+              alt="icon"
+              className="mx-auto w-20 mb-4"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.9 }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            <h2 className="pinyon text-4xl mt-10">We Are</h2>
+            <h2 className="pinyon text-4xl">Getting Married!</h2>
+            <p className="text-sm mt-5 font-semibold mx-12">
+              Maha Suci Allah yang telah mencipatakan makhluk-Nya
+              berpasang-pasangan. Ya Allah semoga ridho-Mu tercurah mengiringi
+              pernikahan kami:
+            </p>
+          </motion.div>
+
+          {/* Mempelai Wanita */}
+          <div className="mt-8">
+            {/* <div className="relative w-40 h-80 mx-auto overflow-hidden rounded-full border-2 border-[#D7BB83] shadow-[5px_5px_5px_rgba(0,0,0,0.3)] transition-all duration-300 m-0 mb-[50px] p-0">
+              <img
+                src={mempelaiWanita}
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            </div> */}
+
+            <div className="relative w-40 h-80 mx-auto mb-[50px]">
+              {/* Wayang di belakang */}
+              <img
+                src={wayangKiri}
+                alt="Wayang"
+                className="absolute inset-0 w-full h-full object-contain z-0 -translate-x-14 translate-y-10"
+              />
+
+              {/* Foto mempelai */}
+
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.9 }}
+                viewport={{ once: false, amount: 0.3 }}
+              >
+                <div className="relative z-10 w-full h-full overflow-hidden rounded-full border-2 border-[#D7BB83] shadow-[5px_5px_5px_rgba(0,0,0,0.3)] transition-all duration-300">
+                  <img
+                    src={mempelaiWanita}
+                    alt="Mempelai Wanita"
+                    className="w-full h-full object-cover "
+                  />
+                </div>
+              </motion.div>
+
+              {/* Bunga di depan bagian bawah */}
+              <img
+                src={bunga}
+                alt="Bunga"
+                className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 w-24 z-20"
+              />
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.9 }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
+              <h3 className="mt-4 pinyon text-6xl">Anita</h3>
+              <p className="playfair text-2xl ">Anita Safitri, S.Pd.</p>
+              <p className="text-sm font-semibold">Putri Pertama dari</p>
+              <p className="text-sm font-semibold">
+                Bapak Adi Nugroho & Ibu Geni
+              </p>
+              <div className="flex justify-center">
+                {/*     background-image: linear-gradient(90deg, #D7BB83 0%, #A38C5E 100%); */}
+                <button className="mt-2 bg-linear-to-r from-[#D7BB83] to-[#A38C5E] text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                  <FaInstagram />
+                  mempelai
+                </button>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* separator */}
+          <div className="text-6xl my-16 ginger font-semibold">&</div>
+
+          {/* Mempelai pria */}
+          <div>
+            <div className="relative w-40 h-80 mx-auto mb-[50px]">
+              {/* Wayang di belakang */}
+              <img
+                src={wayangKanan}
+                alt="Wayang"
+                className="absolute inset-0 w-full h-full object-contain z-0 translate-x-14 translate-y-10"
+              />
+
+              {/* Foto mempelai */}
+              <div className="relative z-10 w-full h-full overflow-hidden rounded-full border-2 border-[#D7BB83] shadow-[5px_5px_5px_rgba(0,0,0,0.3)] transition-all duration-300">
+                <img
+                  src={mempelaiPria}
+                  alt="Mempelai Wanita"
+                  className="w-full h-full object-cover "
+                />
+              </div>
+
+              {/* Bunga di depan bagian bawah */}
+              <img
+                src={bungaReverse}
+                alt="Bunga"
+                className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 w-24 z-20"
+              />
+            </div>
+            <h3 className="mt-4 pinyon text-6xl">Olga</h3>
+            <p className="playfair text-2xl mt-3">Olga Kuswoyo, ST</p>
+            <p className="text-sm font-semibold">Putra Kedua dari</p>
+            <p className="text-sm font-semibold">
+              Bapak Sufian Jamal & Ibu Elmira
+            </p>
+            <div className="flex justify-center">
+              {/*     background-image: linear-gradient(90deg, #D7BB83 0%, #A38C5E 100%); */}
+              <button className="mt-2 bg-linear-to-r from-[#D7BB83] to-[#A38C5E] text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                <FaInstagram />
+                mempelai
+              </button>
+            </div>
+          </div>
+        </div>
+        <img src={batikBawah} alt="" className="" />
+      </div>
+    </div>
+  );
+}
