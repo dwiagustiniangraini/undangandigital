@@ -1,12 +1,13 @@
 import batikAtas from "../assets/images/JAWA-MOTIF-ATAS.webp";
 import batikBawah from "../assets/images/JAWA-MOTIF-BAWAH.webp";
-import mempelaiWanita from "../assets/images/Jawa-21-1.webp";
+import mempelaiWanita from "../assets/images/Jawa-21-1.jpg";
 import wayangKiri from "../assets/images/JAWA-COUPLE-1.webp";
 import bunga from "../assets/images/JAWA-COUPLE-2.webp";
 import wayangKanan from "../assets/images/JAWA-COUPLE-3.webp";
 import bungaReverse from "../assets/images/JAWA-COUPLE-4.webp";
-import mempelaiPria from "../assets/images/Jawa-22-1.webp";
+import mempelaiPria from "../assets/images/Jawa-21-2.jpg";
 import { FaInstagram } from "react-icons/fa6";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 
 export default function Profile() {
@@ -92,18 +93,22 @@ export default function Profile() {
               transition={{ duration: 1.9 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              <h3 className="mt-4 pinyon text-6xl">Anita</h3>
-              <p className="playfair text-2xl ">Anita Safitri, S.Pd.</p>
-              <p className="text-sm font-semibold">Putri Pertama dari</p>
+              <h3 className="mt-4 pinyon text-6xl">Rani</h3>
+              <p className="playfair text-[20px]">
+                Dwi Agustini Angraini, S.Pd
+              </p>
+              <p className="text-sm font-semibold">Anak Ke Dua dari</p>
               <p className="text-sm font-semibold">
-                Bapak Adi Nugroho & Ibu Geni
+                Bapak M. Yani, S.Pd., M.Si & Ibu Jumiatin, S.Pd
               </p>
               <div className="flex justify-center">
                 {/*     background-image: linear-gradient(90deg, #D7BB83 0%, #A38C5E 100%); */}
-                <button className="mt-2 bg-linear-to-r from-[#D7BB83] to-[#A38C5E] text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
-                  <FaInstagram />
-                  mempelai
-                </button>
+                <a href="https://www.instagram.com/dwiiangrainii/">
+                  <button className="mt-2 bg-linear-to-r from-[#D7BB83] to-[#A38C5E] text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                    <FaInstagram />
+                    mempelai
+                  </button>
+                </a>
               </div>
             </motion.div>
           </div>
@@ -125,7 +130,7 @@ export default function Profile() {
               <div className="relative z-10 w-full h-full overflow-hidden rounded-full border-2 border-[#D7BB83] shadow-[5px_5px_5px_rgba(0,0,0,0.3)] transition-all duration-300">
                 <img
                   src={mempelaiPria}
-                  alt="Mempelai Wanita"
+                  alt="Mempelai Pria"
                   className="w-full h-full object-cover "
                 />
               </div>
@@ -137,18 +142,22 @@ export default function Profile() {
                 className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 w-24 z-20"
               />
             </div>
-            <h3 className="mt-4 pinyon text-6xl">Olga</h3>
-            <p className="playfair text-2xl mt-3">Olga Kuswoyo, ST</p>
-            <p className="text-sm font-semibold">Putra Kedua dari</p>
+            <h3 className="mt-4 pinyon text-6xl">Imam</h3>
+            <p className="playfair text-[20px] mt-3">
+              M. Imam Satria Putra, S.Pd
+            </p>
+            <p className="text-sm font-semibold">Anak Ke Dua dari</p>
             <p className="text-sm font-semibold">
-              Bapak Sufian Jamal & Ibu Elmira
+              Bapak Drs. Sumanto, M.Si (Alm) & Ibu Suparmi, S.Ag
             </p>
             <div className="flex justify-center">
               {/*     background-image: linear-gradient(90deg, #D7BB83 0%, #A38C5E 100%); */}
-              <button className="mt-2 bg-linear-to-r from-[#D7BB83] to-[#A38C5E] text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
-                <FaInstagram />
-                mempelai
-              </button>
+              <a href="https://www.instagram.com/muhammadimamsp/">
+                <button className="mt-2 bg-linear-to-r from-[#D7BB83] to-[#A38C5E] text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                  <FaInstagram />
+                  mempelai
+                </button>
+              </a>
             </div>
           </div>
         </div>

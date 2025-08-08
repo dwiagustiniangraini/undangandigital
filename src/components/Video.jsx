@@ -4,11 +4,12 @@ export default function Video() {
       <iframe
         width="100%"
         height="100%"
-        src="https://youtube.com/embed/Ynj_L5TCyws?si=9iQTQcqz4TT82jNr?autoplay=1&mute=1&loop=1"
+        src="https://www.youtube.com/embed/Va0-RYIOjS8?si=QOQCLmWVwwG7KPgv?autoplay=1&loop=1&mute=1"
         title="YouTube video player"
         frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
         allowFullScreen
+        disablePictureInPicture
       ></iframe>
     </div>
   );

@@ -1,4 +1,4 @@
-import bgImage from "../assets/images/Jawa-14-1.webp";
+import bgImage from "../assets/images/DDD_3249.jpg";
 
 export default function SayThanks() {
   return (
@@ -12,7 +12,7 @@ export default function SayThanks() {
       }}
     >
       <div className="text-white text-center flex items-center flex-col h-screen justify-center px-10">
-        <h2 className="ginger text-5xl mb-5">Anita & Olga</h2>
+        <h2 className="ginger text-5xl mb-5">Rani & Imam</h2>
         <p className=" text-md">
           Suatu kebahagiaan & kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i,
           berkenan hadir dan memberikan do'a restu kepada kami

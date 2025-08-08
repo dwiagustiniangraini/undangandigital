@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import photo from "../assets/images/Jawa-9-1.webp";
+import photo from "../assets/images/picture_2.webp";
 import bgImage from "../assets/images/JAWA-BACKGROUND.webp";
 import pattern from "../assets/images/JAWA-PATTERN.webp";
 import batikAtas from "../assets/images/JAWA-MOTIF-ATAS.webp";

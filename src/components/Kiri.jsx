@@ -11,6 +11,7 @@ export default function Kiri() {
       <h2 className="pinyon text-4xl">The Wedding Of</h2>
       <h2 className="ginger text-6xl">Rani & Imam</h2>
       <p className="playfair text-3xl">22 . 08 . 2025</p>
+      <p className="playfair text-3xl">24 . 08 . 2025</p>
     </div>
   );
 }

@@ -7,7 +7,7 @@ export default function LoveStoryCard({ photo, title, tanggal, isi }) {
       ></div>
       <h2 className="mt-5 text-3xl font-semibold playfair">{title}</h2>
       <p className="-mt-1 font-semibold">{tanggal}</p>
-      <p className="mt-5 mx-8 text-md">{isi}</p>
+      <p className="mt-5 mx-2 text-xs">{isi}</p>
     </div>
   );
 }

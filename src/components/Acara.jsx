@@ -3,7 +3,14 @@ import bgImage from "../assets/images/JAWA-BACKGROUND.webp";
 import wayang from "../assets/images/JAWA-GUNUNGAN.webp";
 import { FaMapMarker, FaMapMarkerAlt } from "react-icons/fa";
 
-export default function Acara({ title }) {
+export default function Acara({
+  title,
+  tanggal,
+  jam,
+  lokasi,
+  alamat,
+  linkmap,
+}) {
   return (
     <div
       className="rounded-full p-6 bg-white text-black"
@@ -22,20 +29,20 @@ export default function Acara({ title }) {
         <h2 className="text-5xl  pinyon mb-5">{title}</h2>
         <div className="playfair text-3xl font-semibold">
           <h2>Jumat</h2>
-          <h2>22 Agustus 2025</h2>
+          <h2>{tanggal}</h2>
         </div>
-        <p className="font-semibold text-lg">08.00 WIB</p>
+        <p className="font-semibold text-lg">{jam} WIB</p>
         <p className="text-[#D7BB83] text-2xl my-3">
           <FaMapMarkerAlt />
         </p>
-        <h3 className="playfair text-2xl font-semibold">Auditorium Masjid</h3>
-        <p className="font-semibold text-xs mx-6 mb-5">
-          Jalan Raya Bojongsari No.5, Gunung Putri, Citeureup, Bogor, Jawa Barat
-        </p>
-        <button className="mt-2 bg-linear-to-r from-[#D7BB83] to-[#A38C5E] text-white px-3 py-2 rounded-full text-sm flex items-center gap-2">
-          <FaLocationDot />
-          Google Maps
-        </button>
+        <h3 className="playfair text-2xl font-semibold">{lokasi}</h3>
+        <p className="font-semibold text-xs mx-6 mb-5">{alamat}</p>
+        <a href={linkmap}>
+          <button className="mt-2 bg-linear-to-r from-[#D7BB83] to-[#A38C5E] text-white px-3 py-2 rounded-full text-sm flex items-center gap-2">
+            <FaLocationDot />
+            Google Maps
+          </button>
+        </a>
       </div>
     </div>
   );

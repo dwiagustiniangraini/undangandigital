@@ -1,10 +1,43 @@
 import { FaRegBookmark } from "react-icons/fa6";
 import wayang from "../assets/images/JAWA-GUNUNGAN.webp";
 import Acara from "./Acara";
+import { useEffect, useState } from "react";
 
 // https://www.google.com/calendar/render?action=TEMPLATE&text=The+Wedding+of+Rani+%26amp%3B+Imam&dates=20250824T010000Z%2F20250824T090000Z
 
 export default function SaveTheDate() {
+  const targetDate = "2025-08-24";
+
+  const calculateTimeLeft = () => {
+    const difference = +new Date(targetDate) - +new Date();
+    if (difference <= 0) return null;
+
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / 1000 / 60) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    };
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const newTimeLeft = calculateTimeLeft();
+      setTimeLeft(newTimeLeft);
+
+      if (!newTimeLeft) {
+        clearInterval(timer); // stop when countdown is done
+      }
+    }, 1000);
+
+    return () => clearInterval(timer); // cleanup
+  }, [targetDate]);
+
+  if (!timeLeft) {
+    return <div className="text-center">🎉 Acara telah dimulai!</div>;
+  }
   return (
     <div className="bg-[#472a1c] text-white text-center">
       <div className="flex flex-col items-center justify-center mb-20 p-5">
@@ -12,19 +45,20 @@ export default function SaveTheDate() {
         <h2 className="text-5xl pinyon">Save The Date</h2>
         <div className="flex flex-row w-full mb-5 gap-4 items-center justify-center  text-[#472A1C] p-6">
           <div className="kotak p-5  w-[64px] bg-[#FFFCF3] rounded-lg font-semibold items-center justify-center flex flex-col">
-            <p className="text-4xl playfair">515</p>
+            {/* <p className="text-4xl playfair">515</p> */}
+            <p className="text-4xl playfair">{timeLeft.days}</p>
             <p>Days</p>
           </div>
           <div className="kotak p-5 w-[64px] bg-[#FFFCF3] rounded-lg font-semibold items-center justify-center flex flex-col">
-            <p className="text-4xl playfair">515</p>
+            <p className="text-4xl playfair">{timeLeft.hours}</p>
             <p>Hours</p>
           </div>
           <div className="kotak p-5 w-[64px] bg-[#FFFCF3] rounded-lg font-semibold items-center justify-center flex flex-col">
-            <p className="text-4xl playfair">515</p>
+            <p className="text-4xl playfair">{timeLeft.minutes}</p>
             <p>Minutes</p>
           </div>
           <div className="kotak p-5 w-[64px] bg-[#FFFCF3] rounded-lg font-semibold items-center justify-center flex flex-col">
-            <p className="text-4xl playfair">515</p>
+            <p className="text-4xl playfair">{timeLeft.seconds}</p>
             <p>Seconds</p>
           </div>
         </div>
@@ -33,16 +67,32 @@ export default function SaveTheDate() {
           Bapak/Ibu/Saudara/i, untuk menghadiri acara pernikahan kami:
         </p>
 
-        <button className="flex items-center gap-2 border-2 px-5 py-3 border-white rounded-full bg-[#472A1C]">
-          <FaRegBookmark />
-          Add to Calendar
-        </button>
+        <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=The+Wedding+of+Rani+%26amp%3B+Imam&dates=20250824T010000Z%2F20250824T090000Z">
+          <button className="flex items-center gap-2 border-2 px-5 py-3 border-white rounded-full bg-[#472A1C]">
+            <FaRegBookmark />
+            Add to Calendar
+          </button>
+        </a>
       </div>
 
       {/* section */}
       <div className="p-6 flex flex-col gap-10">
-        <Acara title="Akad Nikah" />
-        <Acara title="Resepsi" />
+        <Acara
+          title="Akad Nikah"
+          tanggal="22 Agustus 2025"
+          jam="14.00"
+          lokasi="Rumah Mempelai Wanita"
+          alamat="Perum. Tanah Mas Azhar Blok C4 No.04 RT 28 RW 05"
+          linkmap=""
+        />
+        <Acara
+          title="Resepsi"
+          tanggal="24 Agustus 2025"
+          jam="09.00"
+          lokasi="Gedung Balai Diklat Penerbangan"
+          alamat=""
+          linkmap=""
+        />
       </div>
     </div>
   );
