@@ -14,7 +14,7 @@ import Video from "./Video";
 import scrollIntoView from "scroll-into-view";
 import { FaCompactDisc, FaPause } from "react-icons/fa6";
 import { FaPauseCircle } from "react-icons/fa";
-import cundamani from "../assets/cundamani.mp3";
+import lagu from "../assets/lagu-jawa-gamelan.mp3";
 import Gallery from "./Gallery";
 
 export default function Wrapper() {
@@ -52,7 +52,7 @@ export default function Wrapper() {
   return (
     <div className="flex h-screen relative !overflow-x-hidden">
       <div className={`absolute z-30 ${!isActive ? "hidden" : ""}`}>
-        <audio ref={audioRef} src={cundamani} loop></audio>
+        <audio ref={audioRef} src={lagu} loop></audio>
         <button
           onClick={togglePlay}
           className="fixed bottom-4 right-4 p-4 bg-white rounded-full shadow-lg flex items-center justify-center"
