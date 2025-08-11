@@ -10,6 +10,7 @@ export default function Acara({
   lokasi,
   alamat,
   linkmap,
+  hari,
 }) {
   return (
     <div
@@ -28,7 +29,7 @@ export default function Acara({
         <img src={wayang} alt="" className="w-[85px] mb-10" height={1000} />
         <h2 className="text-5xl  pinyon mb-5">{title}</h2>
         <div className="playfair text-3xl font-semibold">
-          <h2>Jumat</h2>
+          <h2>{hari}</h2>
           <h2>{tanggal}</h2>
         </div>
         <p className="font-semibold text-lg">{jam} WIB</p>
