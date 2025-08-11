@@ -3,6 +3,8 @@ import LoveStoryCard from "./LoveStoryCard";
 import perkenalanImg from "../assets/images/DDD_3089.jpg";
 import lamaran from "../assets/images/WhatsApp Image 2025-08-08 at 15.56.47.jpeg";
 import nikah from "../assets/images/DDD_3336.jpg";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "motion/react";
 
 export default function LoveStory() {
   const arr = [
@@ -32,13 +34,20 @@ export default function LoveStory() {
       <div className="content flex flex-col items-center justify-center">
         <h1 className="text-center mt-10  text-6xl pinyon">Love Story</h1>
         {arr.map((item, idx) => (
-          <LoveStoryCard
-            key={idx}
-            photo={item.photo}
-            title={item.title}
-            tanggal={item.tanggal}
-            isi={item.isi}
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2 }}
+            viewport={{ once: false, amount: 0.5 }}
+          >
+            <LoveStoryCard
+              key={idx}
+              photo={item.photo}
+              title={item.title}
+              tanggal={item.tanggal}
+              isi={item.isi}
+            />
+          </motion.div>
         ))}
       </div>
       <div></div>

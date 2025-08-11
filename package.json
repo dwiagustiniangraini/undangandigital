@@ -8,8 +8,9 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "vite build && gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
+  "homepage": "https://dwiagustiniangraini.github.io/undangandigital/",
   "dependencies": {
     "@supabase/supabase-js": "^2.54.0",
     "@tailwindcss/vite": "^4.1.11",
@@ -20,8 +21,10 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
+    "react-photo-view": "^1.2.7",
     "react-router-dom": "^7.8.0",
     "scroll-into-view": "^1.16.2",
+    "swiper": "^11.2.10",
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {

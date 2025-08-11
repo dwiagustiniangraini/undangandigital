@@ -7,6 +7,8 @@ import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 import "dayjs/locale/id";
 import WishesCard from "./WishesCard";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "motion/react";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -61,17 +63,24 @@ export default function Wishes() {
       ></div>
       <div className="z-10 flex flex-col justify-center">
         <div className="flex flex-col p-6">
-          <h1 className="text-center font-semibold text-6xl mt-10 ginger">
-            Wishes
-          </h1>
-          <p className="text-center font-semibold">
-            Ucapan Selamat, Doa, & Konfirmasi Kehadiran
-          </p>
-          <div className="flex justify-center">
-            <p className="text-center my-5 font-semibold flex items-center gap-2">
-              <FiMessageCircle /> {guests.length} Ucapan
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2 }}
+            viewport={{ once: false, amount: 0.5 }}
+          >
+            <h1 className="text-center font-semibold text-6xl mt-10 ginger">
+              Wishes
+            </h1>
+            <p className="text-center font-semibold">
+              Ucapan Selamat, Doa, & Konfirmasi Kehadiran
             </p>
-          </div>
+            <div className="flex justify-center">
+              <p className="text-center my-5 font-semibold flex items-center gap-2">
+                <FiMessageCircle /> {guests.length} Ucapan
+              </p>
+            </div>
+          </motion.div>
           <input
             type="text"
             value={name}

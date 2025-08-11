@@ -7,6 +7,7 @@ import wayangKanan from "../assets/images/JAWA-COUPLE-3.webp";
 import bungaReverse from "../assets/images/JAWA-COUPLE-4.webp";
 import mempelaiPria from "../assets/images/Jawa-21-2.jpg";
 import { FaInstagram } from "react-icons/fa6";
+import wayang from "../assets/images/JAWA-GUNUNGAN.webp";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 
@@ -20,20 +21,16 @@ export default function Profile() {
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.5 }}
           >
-            <img
-              src="/src/assets/images/JAWA-GUNUNGAN.webp"
-              alt="icon"
-              className="mx-auto w-20 mb-4"
-            />
+            <img src={wayang} alt="icon" className="mx-auto w-20 mb-4" />
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.9 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.5 }}
           >
             <h2 className="pinyon text-4xl mt-10">We Are</h2>
             <h2 className="pinyon text-4xl">Getting Married!</h2>
@@ -68,7 +65,7 @@ export default function Profile() {
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.9 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: false, amount: 0.5 }}
               >
                 <div className="relative z-10 w-full h-full overflow-hidden rounded-full border-2 border-[#D7BB83] shadow-[5px_5px_5px_rgba(0,0,0,0.3)] transition-all duration-300">
                   <img
@@ -91,7 +88,7 @@ export default function Profile() {
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.9 }}
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.5 }}
             >
               <h3 className="mt-4 pinyon text-6xl">Rani</h3>
               <p className="playfair text-[20px]">
@@ -120,45 +117,66 @@ export default function Profile() {
           <div>
             <div className="relative w-40 h-80 mx-auto mb-[50px]">
               {/* Wayang di belakang */}
-              <img
-                src={wayangKanan}
-                alt="Wayang"
-                className="absolute inset-0 w-full h-full object-contain z-0 translate-x-14 translate-y-10"
-              />
-
-              {/* Foto mempelai */}
-              <div className="relative z-10 w-full h-full overflow-hidden rounded-full border-2 border-[#D7BB83] shadow-[5px_5px_5px_rgba(0,0,0,0.3)] transition-all duration-300">
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.9 }}
+                viewport={{ once: false, amount: 0.5 }}
+              >
                 <img
-                  src={mempelaiPria}
-                  alt="Mempelai Pria"
-                  className="w-full h-full object-cover "
+                  src={wayangKanan}
+                  alt="Wayang"
+                  className="absolute inset-0 w-full h-full object-contain z-0 translate-x-14 translate-y-10"
                 />
-              </div>
+
+                {/* Foto mempelai */}
+                <div className="relative z-10 w-full h-full overflow-hidden rounded-full border-2 border-[#D7BB83] shadow-[5px_5px_5px_rgba(0,0,0,0.3)] transition-all duration-300">
+                  <img
+                    src={mempelaiPria}
+                    alt="Mempelai Pria"
+                    className="w-full h-full object-cover "
+                  />
+                </div>
+              </motion.div>
 
               {/* Bunga di depan bagian bawah */}
-              <img
-                src={bungaReverse}
-                alt="Bunga"
-                className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 w-24 z-20"
-              />
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.9 }}
+                viewport={{ once: false, amount: 0.5 }}
+              >
+                <img
+                  src={bungaReverse}
+                  alt="Bunga"
+                  className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 w-24 z-20"
+                />
+              </motion.div>
             </div>
-            <h3 className="mt-4 pinyon text-6xl">Imam</h3>
-            <p className="playfair text-[20px] mt-3">
-              M. Imam Satria Putra, S.Pd
-            </p>
-            <p className="text-sm font-semibold">Anak Ke Dua dari</p>
-            <p className="text-sm font-semibold">
-              Bapak Drs. Sumanto, M.Si (Alm) & Ibu Suparmi, S.Ag
-            </p>
-            <div className="flex justify-center">
-              {/*     background-image: linear-gradient(90deg, #D7BB83 0%, #A38C5E 100%); */}
-              <a href="https://www.instagram.com/muhammadimamsp/">
-                <button className="mt-2 bg-linear-to-r from-[#D7BB83] to-[#A38C5E] text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
-                  <FaInstagram />
-                  mempelai
-                </button>
-              </a>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.9 }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
+              <h3 className="mt-4 pinyon text-6xl">Imam</h3>
+              <p className="playfair text-[20px] mt-3">
+                M. Imam Satria Putra, S.Pd
+              </p>
+              <p className="text-sm font-semibold">Anak Ke Dua dari</p>
+              <p className="text-sm font-semibold">
+                Bapak Drs. Sumanto, M.Si (Alm) & Ibu Suparmi, S.Ag
+              </p>
+              <div className="flex justify-center">
+                {/*     background-image: linear-gradient(90deg, #D7BB83 0%, #A38C5E 100%); */}
+                <a href="https://www.instagram.com/muhammadimamsp/">
+                  <button className="mt-2 bg-linear-to-r from-[#D7BB83] to-[#A38C5E] text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                    <FaInstagram />
+                    mempelai
+                  </button>
+                </a>
+              </div>
+            </motion.div>
           </div>
         </div>
         <img src={batikBawah} alt="" className="" />

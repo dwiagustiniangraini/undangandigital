@@ -72,3 +72,34 @@
 .custom-scroll::-webkit-scrollbar-thumb:hover {
   background-color: #7c5c3b;
 }
+
+.animate-spin-slow {
+  animation: spin 4s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.image-fade {
+  position: relative;
+}
+
+.image-fade img {
+  display: block;
+}
+
+.image-fade::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px; /* tinggi gradasi */
+  background: linear-gradient(to bottom, rgba(71, 42, 28, 0) 20%, #472a1c 100%);
+  pointer-events: none;
+}
