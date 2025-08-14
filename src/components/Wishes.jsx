@@ -9,6 +9,7 @@ import "dayjs/locale/id";
 import WishesCard from "./WishesCard";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
+import toast from "react-hot-toast";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -19,9 +20,13 @@ export default function Wishes() {
   const [presence, setPresence] = useState("");
   const [message, setMessage] = useState("");
   const [guests, setGuests] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const fetchGuests = async () => {
-    const { data, error } = await supabase.from("guests").select("*");
+    const { data, error } = await supabase
+      .from("guests")
+      .select("*")
+      .order("created_at", { ascending: false });
 
     // console.log("Data:", data);
     if (error) {
@@ -35,14 +40,19 @@ export default function Wishes() {
   }, []);
 
   const handleSubmit = async () => {
-    // console.log("Submitted");
+    setIsModalOpen(false);
     const { data, error } = await supabase
       .from("guests") // nama tabel
       .insert([{ name, message, presence }]);
 
     if (error) {
+      toast.error("Gagal mengirim pesan!");
       console.error("Error insert:", error);
     } else {
+      toast.success("Pesan berhasil dikirim");
+      setName("");
+      setPresence("");
+      setMessage("");
       console.log("Insert success:", data);
       fetchGuests();
     }
@@ -109,21 +119,49 @@ export default function Wishes() {
           />
           <div className="flex my-5">
             <button
-              onClick={handleSubmit}
+              onClick={() => setIsModalOpen(true)}
               className="bg-[#A38C5E] px-4 py-2 rounded-lg hover:font-bold font-semibold w-32"
             >
               Kirim
             </button>
           </div>
         </div>
-        <div className="h-64 mt-10 px-4 overflow-y-scroll w-full custom-scroll">
+        <div className="h-80 mt-10 px-4 overflow-y-scroll w-full custom-scroll">
           {guests.map((item) => (
             <WishesCard key={item.id} item={item} />
           ))}
         </div>
       </div>
 
-      {/* ucapan */}
+      {/* modal */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div
+            className="bg-white rounded-xl p-6 w-80 text-center text-gray-800"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2 className="text-lg font-bold mb-4">Kirim Pesan?</h2>
+            <p className="mb-6">Pastikan data sudah benar sebelum mengirim.</p>
+            <div className="flex justify-center gap-4">
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400"
+              >
+                Batal
+              </button>
+              <button
+                onClick={handleSubmit}
+                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
+              >
+                Kirim
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

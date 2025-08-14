@@ -16,6 +16,7 @@ import { FaCompactDisc, FaPause } from "react-icons/fa6";
 import { FaPauseCircle } from "react-icons/fa";
 import lagu from "../assets/lagu-jawa-gamelan.mp3";
 import Gallery from "./Gallery";
+import { Toaster } from "react-hot-toast";
 
 export default function Wrapper() {
   const [isActive, setIsActive] = useState(false);
@@ -87,6 +88,7 @@ export default function Wrapper() {
             <LoveStory />
             <Wishes />
             <SayThanks />
+            <Toaster position="top-center" reverseOrder={false} />
           </>
         ) : (
           <></>
